@@ -27,6 +27,7 @@ class ProductListView extends StatelessWidget {
                 return Center(child: Text(state.message));
               } else if (state is ProductListLoaded) {
                 return ListView.builder(
+                  physics: BouncingScrollPhysics(), // physics animation
                   itemCount: state.list.length,
                   itemBuilder: (context, index) {
                     final product = state.list[index];
